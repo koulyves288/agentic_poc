@@ -63,14 +63,15 @@ npm install
 
 **Using .NET Aspire (Recommended):**
 
-# Add openai api key to .env files
+### Add openai api key to .env files
+```bash
 cd ../Elf/.env
 cd ../Hobbit/.env
 cd ../Wizard/.env
 cd ../WorkflowLLM/.env
 ```
-# Update WorkflowLLM\server.py on line 112 with the absolute path of LLMOrchestrator_state.json
-
+### Update WorkflowLLM\server.py on line 112 with the absolute path of LLMOrchestrator_state.json
+```bash
 LLM_STATE_PATH = r"C:\Users\kouly\Downloads\agenticdemo-lordofrings2\AgenticDaprDemoAspire\WorkflowLLM\LLMOrchestrator_state.json"
 
 ```
