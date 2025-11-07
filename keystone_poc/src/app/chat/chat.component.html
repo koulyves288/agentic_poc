@@ -1,0 +1,115 @@
+<div class="chat-container">
+  <!-- Removed embedded participants sidebar; now toggles left sidebar only -->
+
+  <!-- Main Chat Section -->
+  <section class="chat" role="region" aria-label="Multi-Agent Chat">
+    <!-- Chat Header -->
+    <div class="chat__header">
+      <div class="chat__header-left">
+        <img src="assets/csrassist/csrassist_header_icon.svg" alt="Multi-Agent Chat" class="chat__header-icon" />
+        <div class="chat__header-titles">
+          <div class="chat__title">CSR Assist</div>
+          <div class="chat__subtitle">
+            <span [class.connection-status--connected]="isConnected" [class.connection-status--disconnected]="!isConnected">
+              {{ isConnected ? 'Connected' : 'Disconnected' }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat__header-right">
+        <label class="chat__switch-label">Full Chat</label>
+        <label class="switch" aria-hidden="true">
+          <input 
+            type="checkbox" 
+            aria-label="Full Chat toggle" 
+            [checked]="isFullChat"
+            (change)="onToggleFullChat()"
+          />
+          <span class="slider"></span>
+        </label>
+        <button class="chat__agents-toggle" type="button" (click)="onToggleAgentsSidebar()" [disabled]="participants.length === 0" aria-label="Toggle participants list">
+          <svg class="chat__agents-toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5C18 14.17 13.33 13 11 13H8zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V20h6v-3.5c0-2.33-4.67-3.5-7-3.5z" fill="currentColor"/>
+          </svg>
+          <span>Participants</span>
+        </button>
+        <button class="chat__replay-btn" type="button" aria-label="Clear conversation" (click)="onReplayClearChat()">
+          <img class="chat__replay-icon" src="assets/csrassist/replay.svg" alt="Clear chat" />
+        </button>
+      </div>
+    </div>
+
+    <!-- Chat Body -->
+    <div class="chat__body" [class.chat__body--full]="isFullChat">
+      <!-- Messages Container -->
+      <div class="chat__messages" #messagesContainer>
+        <div 
+          class="chat__message"
+          *ngFor="let message of messages; trackBy: trackByMessageId"
+          [ngClass]="getMessageClass(message)"
+        >
+          <!-- Agent Avatar (for agent messages) -->
+          <div class="chat__message-avatar" *ngIf="message.sender === 'agent' && message.avatar">
+            <img [src]="message.avatar" [alt]="getAgentDisplayName(message)" class="chat__message-avatar-img" />
+          </div>
+          
+          <!-- Message Content -->
+          <div class="chat__message-content">
+            <div class="chat__message-header" *ngIf="message.sender === 'agent'">
+              <span class="chat__message-sender">{{ getAgentDisplayName(message) }}</span>
+            </div>
+            <div class="chat__message-text">{{ message.content }}</div>
+            <div class="chat__message-time">{{ formatTime(message.timestamp) }}</div>
+          </div>
+        </div>
+
+        <!-- Thinking indicator -->
+        <div class="chat__message chat__message--agent" *ngIf="isThinking">
+          <div class="chat__message-avatar">
+            <img src="assets/csrassist/csrassist_avatar.jpg" alt="Assistant" class="chat__message-avatar-img" />
+          </div>
+          <div class="chat__message-content">
+            <div class="chat__message-text thinking">
+              Thinking<span class="dot dot-1">.</span><span class="dot dot-2">.</span><span class="dot dot-3">.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Footer -->
+      <div class="chat__footer">
+        <!-- AI usage hint (above input) -->
+        <!-- <div id="aiHint" class="chat__hint" role="note" aria-live="polite">
+          <svg class="chat__hint-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c.83 0 1.5.67 1.5 1.5S12.83 8 12 8s-1.5-.67-1.5-1.5S11.17 5 12 5zm2 12h-4v-2h1v-3h-1v-2h3v5h1v2z"/>
+          </svg>
+          <span class="chat__hint-text">To prompt the AI agent, start your message with <strong>&#64;</strong>. Messages without <strong>&#64;</strong> stay in human chat and won’t be sent to the AI.</span>
+        </div> -->
+        <div class="chat__input-row">
+          <input 
+            type="text" 
+            class="chat__input" 
+            placeholder="Type your message… Use @ to ask the AI" 
+            aria-label="Message input"
+            aria-describedby="aiHint"
+            [(ngModel)]="currentMessage"
+            (keypress)="onKeyPress($event)"
+            #messageInput
+            [disabled]="!isConnected"
+          />
+            <button 
+              class="chat__send" 
+              aria-label="Send message"
+              (click)="onSendMessage()"
+              [disabled]="!isConnected || !currentMessage.trim()"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="white"/>
+              </svg>
+            </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

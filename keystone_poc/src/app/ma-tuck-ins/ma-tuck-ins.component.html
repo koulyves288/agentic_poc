@@ -1,0 +1,165 @@
+<div class="tuckins-page">
+  <h1 class="page-title">M &amp; A Tuck-ins</h1>
+
+  <section class="tuckins-content" aria-label="M & A Tuck-ins setup section">
+    <header class="tuckins-content__header">
+      <h2 class="setup-title">Setup</h2>
+      <p class="setup-subtitle">Guided 5 steps flow to mitigate an acquired agency into your target AMS</p>
+    </header>
+
+    <!-- Stepper (interactive, no-wrap labels, indicator states) -->
+    <div class="stepper">
+      <div class="stepper2">
+        <ng-container *ngFor="let s of steps; let i = index">
+          <div class="step" role="button" tabindex="0"
+               [class.is-active]="isActive(i)" [class.is-completed]="isCompleted(i)"
+               (click)="goToStep(i)">
+            <div class="step__icon" aria-hidden="true">
+              <svg *ngIf="isCompleted(i)" class="check" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path fill="currentColor" d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+              </svg>
+            </div>
+            <div class="step__label">{{ s.label }}</div>
+          </div>
+        </ng-container>
+      </div>
+      <div class="stepper-description">
+        <div class="subtext">{{ steps[currentStep]?.description || 'Select the system you are importing from' }}</div>
+      </div>
+    </div>
+
+    <!-- Step 1 content: Choose AMS Source -->
+    <div class="step-panel" *ngIf="currentStep === 0">
+      <div class="fields-row">
+        <!-- Search field -->
+        <div class="field search-group">
+          <label class="field__label" for="ams-search">Search AMS</label>
+          <div class="search-control">
+            <input
+              id="ams-search"
+              type="text"
+              class="search-input"
+              placeholder="Search AMS"
+              aria-label="Search AMS"
+            />
+            <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Dropdown: Select Source -->
+        <div class="field select-group">
+          <label class="field__label" for="ams-source">Select Source</label>
+          <select id="ams-source" class="dropdown-select" aria-label="Select Source">
+            <option value="" selected disabled>Select…</option>
+            <option value="applied-epic">Applied Epic</option>
+            <option value="ams360">AMS360</option>
+            <option value="hawksoft">HawkSoft</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- AMS sources grid (3 columns full width) -->
+      <div class="ams-grid" role="list">
+        <app-ams-card
+          role="listitem"
+          *ngFor="let s of amsSources"
+          [name]="s.name"
+          [sourceId]="s.id"
+          [color]="s.color"
+          [selected]="selectedSourceId === s.id"
+          (select)="onSelectSource($event)"
+        ></app-ams-card>
+      </div>
+
+      <!-- Actions row -->
+      <div class="actions-row">
+        <div class="actions-row__left">
+          <button type="button" class="btn btn-back" (click)="prevStep()">
+            <svg class="chevron-backward-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+            <span class="button">Back</span>
+          </button>
+        </div>
+        <div class="actions-row__right">
+          <button type="button" class="btn btn-draft">
+            <span class="button">Save as Draft</span>
+          </button>
+          <button type="button" class="btn btn-next" (click)="nextStep()" [disabled]="currentStep === steps.length - 1">
+            <span class="button">Next</span>
+            <svg class="chevron-forward-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 content: Choose AMS Target -->
+  <div class="step-panel step2-panel" *ngIf="currentStep === 1">
+      <div class="fields-row">
+        <!-- Dropdown: Select Target -->
+        <div class="field select-group">
+          <label class="field__label" for="ams-target">Select target</label>
+          <select id="ams-target" class="dropdown-select" aria-label="Select target" (change)="onSelectTarget($any($event.target).value)">
+            <option value="" selected disabled>Select…</option>
+            <option value="applied-epic">Applied Epic</option>
+            <option value="ams360">AMS360</option>
+            <option value="hawksoft">HawkSoft</option>
+          </select>
+        </div>
+
+        <!-- Text field: Destination org name -->
+        <div class="field text-group">
+          <label class="field__label" for="destination-org">Destination org name</label>
+          <input
+            id="destination-org"
+            type="text"
+            class="text-input"
+            placeholder="eg. Keystone Agency Ohio"
+            aria-label="Destination org name"
+            (input)="destinationOrgName = $any($event.target).value"
+          />
+        </div>
+      </div>
+
+      <!-- Destination Notes textarea replacing AMS grid -->
+      <div class="field notes-group">
+        <label class="field__label" for="destination-notes">Destination Notes</label>
+        <textarea
+          id="destination-notes"
+          class="textarea-input"
+          rows="5"
+          placeholder="Any special routing producers to notify, or compliance flag..."
+          aria-label="Destination notes"
+          (input)="destinationNotes = $any($event.target).value"
+        ></textarea>
+      </div>
+
+      <!-- Actions row -->
+      <div class="actions-row">
+        <div class="actions-row__left">
+          <button type="button" class="btn btn-back" (click)="prevStep()">
+            <svg class="chevron-backward-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+            <span class="button">Back</span>
+          </button>
+        </div>
+        <div class="actions-row__right">
+          <button type="button" class="btn btn-draft">
+            <span class="button">Save as Draft</span>
+          </button>
+          <button type="button" class="btn btn-next" (click)="nextStep()" [disabled]="currentStep === steps.length - 1">
+            <span class="button">Next</span>
+            <svg class="chevron-forward-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

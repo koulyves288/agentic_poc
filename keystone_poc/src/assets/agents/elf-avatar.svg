@@ -1,0 +1,13 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Elf Avatar -->
+  <circle cx="16" cy="16" r="16" fill="#E8F5E8"/>
+  <circle cx="16" cy="14" r="8" fill="#F4A460"/>
+  <!-- Elf ears -->
+  <path d="M8 12 C6 8, 8 6, 10 8" fill="#F4A460"/>
+  <path d="M24 12 C26 8, 24 6, 22 8" fill="#F4A460"/>
+  <!-- Eyes -->
+  <circle cx="13" cy="12" r="1.5" fill="#228B22"/>
+  <circle cx="19" cy="12" r="1.5" fill="#228B22"/>
+  <!-- Smile -->
+  <path d="M13 17 Q16 19 19 17" stroke="#2F4F2F" stroke-width="1" fill="none"/>
+</svg>

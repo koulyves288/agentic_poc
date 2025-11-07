@@ -1,0 +1,8 @@
+[
+  { "id": "ams-epic", "name": "Applied Epic", "color": "#ED1684" },
+  { "id": "ams-ams360", "name": "Vertafore AMS360", "color": "#063E59" },
+  { "id": "ams-hawksoft", "name": "Hawksoft", "color": "#509F8A" },
+  { "id": "ams-novidea", "name": "Novidea", "color": "#EDC336" },
+  { "id": "ams-sagitta", "name": "Sagitta", "color": "#CED2DE" },
+  { "id": "Book of Business Template", "name": "Template", "color": "#ED1684" }
+]

@@ -1,0 +1,492 @@
+/* Page container should fill the main content width */
+.tuckins-page {
+  width: 100%;
+}
+
+/* Page title typography */
+.page-title {
+  color: #262525;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+/* Full-width content area with rounded border and blur */
+.tuckins-content {
+  /* Requested fixed width for Tuck-ins */
+  width: 100%;
+  max-width: 1104px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  border: 1px solid #D6D2D2;
+  backdrop-filter: blur(2px);
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.tuckins-content__header { margin-bottom: 12px; }
+
+/* Setup title typography */
+.setup-title {
+  color: #262525;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
+/* Setup subtitle typography */
+.setup-subtitle {
+  color: #262525;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin: 6px 0 0 0;
+}
+
+/* Provided stepper styles (with minor responsiveness tweaks) */
+.stepper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  font-size: 14px;
+  color: #3b4c69;
+  font-family: Roboto, system-ui, -apple-system, "Segoe UI", Inter, Arial, sans-serif;
+  margin-top: 40px;
+}
+.stepper2 {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  gap: 58px; /* visual spacing between tab content */
+  /* underline will bridge most of this gap, leaving a small visual gap */
+  --step-gap: 58px;
+  --underline-gap: 3px; /* desired max gap between underlines */
+  flex-wrap: nowrap; /* do not wrap step tabs */
+  overflow-x: auto; /* allow horizontal scroll if needed */
+}
+.stepper-step {
+  width: 208.5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  color: #66748a;
+}
+.icon-label {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.status-icons {
+  height: 20px;
+  width: 20px;
+  position: relative;
+  border-radius: 999px;
+  border: 2px solid #a8afbc;
+  box-sizing: border-box;
+}
+.stepper3 {
+  position: relative;
+  letter-spacing: 0.2px;
+  line-height: 20px;
+  font-weight: 600;
+  white-space: nowrap; /* prevent label wrapping */
+}
+.progress {
+  align-self: stretch;
+  height: 8px;
+  display: flex;
+  align-items: center;
+  padding: 3px 0px;
+  box-sizing: border-box;
+}
+.stepper-progress {
+  height: 2px;
+  flex: 1;
+  border-radius: 12px;
+  background-color: #a8afbc;
+  display: flex;
+  align-items: center;
+  z-index: 0;
+}
+.stepper-stepper-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+}
+.stepper-status-icons {
+  height: 20px;
+  width: 20px;
+  position: relative;
+}
+.status-icons-child {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: 50%;
+  background-color: rgba(0, 105, 170, 0.3);
+}
+.status-icons-item {
+  position: absolute;
+  height: 70%;
+  width: 70%;
+  top: 15%;
+  right: 15%;
+  bottom: 15%;
+  left: 15%;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid #0069aa;
+  box-sizing: border-box;
+}
+.progress3 {
+  height: 2px;
+  flex: 1;
+  border-radius: 12px;
+  background-color: #7c889b;
+  display: flex;
+  align-items: center;
+  z-index: 0;
+}
+.status-icons2 {
+  height: 20px;
+  width: 20px;
+  position: relative;
+  border-radius: 999px;
+  border: 2px solid #7c889b;
+  box-sizing: border-box;
+}
+.stepper-step4 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  color: #66748a;
+}
+.stepper-description {
+  width: 100%;
+  max-width: 1057px; /* match design while remaining responsive */
+  background-color: #e9ebee;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  box-sizing: border-box;
+  margin-top: 8px;
+  margin-bottom: 50px; /* add spacing below the description */
+}
+.subtext {
+  position: relative;
+  letter-spacing: 0.2px;
+  line-height: 20px;
+}
+
+/* -------------------
+   Step 1 content styles
+-------------------- */
+.step-panel { width: 100%; margin-top: 16px; }
+.fields-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* equal widths */
+  column-gap: 24px;
+  row-gap: 16px;
+  width: 100%;
+}
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+
+/* Search field */
+.search-group { width: 100%; }
+.search-control { position: relative; width: 100%; }
+.search-input {
+  width: 100%;
+  height: 40px;
+  padding: var(--Spacing-Small, 4px) var(--Spacing-04, 8px);
+  padding-right: 36px; /* room for icon */
+  border-radius: var(--BorderRadius-Medium, 8px);
+  border: 1px solid var(--Color-border-Default, #929CAC);
+  background: var(--Color-background-White, #FFF);
+  color: var(--Color-text-TextPrimary, #3B4C69);
+  font-family: Roboto, system-ui, -apple-system, "Segoe UI", Inter, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  box-sizing: border-box;
+}
+.search-input::placeholder { color: #66748A; opacity: 1; }
+.text-input {
+  width: 100%;
+  height: 40px;
+  padding: var(--Spacing-Small, 4px) var(--Spacing-04, 8px);
+  border-radius: var(--BorderRadius-Medium, 8px);
+  border: 1px solid var(--Color-border-Default, #929CAC);
+  background: var(--Color-background-White, #FFF);
+  color: var(--Color-text-TextPrimary, #3B4C69);
+  font-family: Roboto, system-ui, -apple-system, "Segoe UI", Inter, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  box-sizing: border-box;
+}
+.text-input::placeholder { color: #66748A; opacity: 1; }
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px; height: 18px;
+  color: #66748A;
+  pointer-events: none;
+}
+
+/* Dropdown */
+.field__label {
+  color: var(--Color-text-TextEmphasized, #3B4C69);
+  font-family: Roboto, system-ui, -apple-system, "Segoe UI", Inter, Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.2px;
+}
+.select-group { width: 100%; }
+.dropdown-select {
+  display: flex;
+  height: 40px;
+  padding: var(--Spacing-Small, 4px) var(--Spacing-04, 8px);
+  align-items: center;
+  gap: var(--Spacing-03, 4px);
+  align-self: stretch;
+  border-radius: var(--BorderRadius-Medium, 8px);
+  border: 1px solid var(--Color-border-Default, #929CAC);
+  background: var(--Color-background-White, #FFF);
+  color: var(--Color-text-TextPrimary, #3B4C69);
+  font-family: Roboto, system-ui, -apple-system, "Segoe UI", Inter, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  width: 100%;
+}
+
+/* Textarea (Destination Notes) */
+.notes-group { margin-top: 20px; }
+.textarea-input {
+  width: 100%;
+  min-height: 120px;
+  padding: var(--Spacing-Small, 4px) var(--Spacing-04, 8px);
+  border-radius: var(--BorderRadius-Medium, 8px);
+  border: 1px solid var(--Color-border-Default, #929CAC);
+  background: var(--Color-background-White, #FFF);
+  color: var(--Color-text-TextPrimary, #3B4C69);
+  font-family: Roboto, system-ui, -apple-system, "Segoe UI", Inter, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+.textarea-input::placeholder { color: #66748A; opacity: 1; }
+
+@media (max-width: 720px) {
+  .fields-row { grid-template-columns: 1fr; }
+}
+
+/* AMS sources grid: 3 columns spanning full width */
+.ams-grid {
+  margin-top: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px; /* clearer spacing between cards */
+  justify-items: center; /* center fixed-width cards in each column */
+  justify-content: center; /* center the whole grid content within container */
+}
+
+@media (max-width: 1104px) {
+  .ams-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px) {
+  .ams-grid { grid-template-columns: 1fr; }
+}
+
+/* -------------------
+   Action buttons row
+-------------------- */
+.actions-row {
+  width: 100%;
+  margin-top: 50px; /* spacing between form and buttons */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* left and right extremes */
+  gap: 16px;
+}
+.step2-panel .actions-row { margin-top: 100px; }
+.actions-row__right { display: flex; gap: 12px; }
+
+.btn {
+  width: 100%;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 32px;
+  box-sizing: border-box;
+  gap: 8px;
+  font-family: Roboto, system-ui, -apple-system, "Segoe UI", Inter, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  font-weight: 500;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Back button style */
+.btn-back {
+  background-color: #e9ebee;
+  border: 1px solid #a8afbc;
+  color: #66748a;
+}
+.chevron-backward-icon {
+  height: 20px;
+  width: 20px;
+  position: relative;
+}
+
+/* Save as Draft (outline primary) */
+.btn-draft {
+  border: 1px solid #0069aa;
+  color: #0069aa;
+}
+
+/* Next (solid primary) */
+.btn-next {
+  background-color: #0069aa;
+  color: #fff;
+}
+.chevron-forward-icon {
+  height: 20px;
+  width: 20px;
+  position: relative;
+}
+
+/* Make left button not stretch too wide; right buttons hug content */
+.actions-row__left .btn { width: auto; }
+.actions-row__right .btn { width: auto; }
+
+@media (max-width: 720px) {
+  .actions-row { flex-direction: column; align-items: stretch; }
+  .actions-row__right { width: 100%; justify-content: flex-end; }
+  .actions-row__right .btn { width: auto; }
+}
+
+/* New interactive stepper styles */
+.step {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 6px; /* space for underline */
+}
+.step__icon {
+  height: 20px;
+  width: 20px;
+  border-radius: 999px;
+  border: 2px solid #a8afbc;
+  background: #fff;
+  position: relative;
+  flex: 0 0 auto;
+  color: #fff; /* for check icon */
+}
+.step.is-active .step__icon {
+  border-color: #0069aa;
+  box-shadow: 0 0 0 2px rgba(0, 105, 170, 0.15) inset;
+}
+.step.is-completed .step__icon {
+  background: #0069aa;
+  border-color: #0069aa;
+}
+.step__icon .check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+}
+.step__label {
+  white-space: nowrap; /* show full text in a single line */
+  /* Label/L3 (default: not selected or completed) */
+  color: var(--Color-text-TextDisabled, #66748A);
+  font-family: Roboto, system-ui, -apple-system, "Segoe UI", Inter, Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400; /* regular when not selected or completed */
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.2px;
+}
+
+/* Selected or completed label color */
+.step.is-active .step__label,
+.step.is-completed .step__label {
+  color: var(--Color-text-TextEmphasized, #3B4C69);
+  font-weight: 600; /* bold when selected or completed */
+}
+/* removed connector line; underline sits under each tab instead */
+
+/* Underline as a pseudo-element that extends into the gap to reduce visual gap */
+.step::after {
+  content: "";
+  position: absolute;
+  left: calc((var(--underline-gap) - var(--step-gap)) / 2);
+  bottom: 0;
+  height: 2px;
+  width: calc(100% + var(--step-gap) - var(--underline-gap));
+  background-color: #a8afbc; /* default underline color */
+  border-radius: 12px;
+}
+
+/* First step shouldn't extend left beyond container */
+.step:first-child::after {
+  left: 0;
+  width: calc(100% + (var(--step-gap) - var(--underline-gap)) / 2);
+}
+
+/* Last step shouldn't extend right beyond container */
+.step:last-child::after {
+  /* same left offset, but reduce width by half extension on the right */
+  width: calc(100% + (var(--step-gap) - var(--underline-gap)) / 2);
+}
+
+/* State-driven underline colors */
+.step.is-active::after { background-color: #0069aa; }
+.step.is-completed::after { background-color: #7c889b; }

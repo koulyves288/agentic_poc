@@ -1,0 +1,10 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: mock-llm
+spec:
+  type: conversation.echo
+  version: v1
+  metadata:
+  - name: response
+    value: "This is a mock response from {agent_name}. The original message was: {user_message}"

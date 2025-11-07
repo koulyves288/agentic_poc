@@ -1,0 +1,30 @@
+[
+  {
+    "status": "active",
+    "icon": "assets/csrassistcard/csrassist_icon.svg",
+    "title": "CSR Assist",
+    "color": "#ED1684",
+    "subtitle": "Customer Service Representative Support"
+  },
+  {
+    "status": "available",
+    "icon": "assets/csrassistcard/producer_assist_icon.svg",
+    "title": "Producer Assist",
+    "color": "#063E59",
+    "subtitle": "Sales and Producer assistance"
+  },
+  {
+    "status": "available",
+    "icon": "assets/csrassistcard/carrier_assist_icon.svg",
+    "title": "Carrier Assist",
+    "color": "#509F8A",
+    "subtitle": "Broker Bridge, Carrier operations and management"
+  },
+  {
+    "status": "available",
+    "icon": "assets/csrassistcard/ma_tuckins_icon.svg",
+    "title": "M & A Tuck Ins",
+    "color": "#EDC336",
+    "subtitle": "Mergers and acquisitions support"
+  }
+]

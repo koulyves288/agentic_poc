@@ -1,0 +1,65 @@
+<div class="layout">
+  <aside class="sidebar" aria-label="Left sidebar">
+    <div class="sidebar__logo">
+      <img src="assets/logo.png" alt="Company logo" />
+    </div>
+
+    <nav class="sidebar__nav" aria-label="Primary">
+      <a class="nav__item" *ngFor="let item of menuItems" href="#" [attr.aria-label]="item.label">
+        <img class="nav__icon" [src]="item.icon" [alt]="item.label + ' icon'" />
+        <span class="nav__label">{{ item.label }}</span>
+      </a>
+
+      <!-- Separator before participants section -->
+      <div class="sidebar__separator" *ngIf="showSidebarParticipants && participants?.length" aria-hidden="true"></div>
+
+      <!-- Participants relocated into sidebar under menu items -->
+      <div class="sidebar__participants" *ngIf="showSidebarParticipants && participants?.length" aria-label="Participants list">
+        <div class="sidebar__participants-heading">Participants</div>
+        <div class="sidebar__participants-list">
+          <div class="sidebar__participant" *ngFor="let p of participants" [title]="p.name">
+            <img class="sidebar__participant-avatar" [src]="p.avatar || 'assets/csrassist/csrassist_header_icon.svg'" [alt]="p.name + ' avatar'" />
+            <span class="sidebar__participant-name">{{ p.name }}</span>
+            <span class="sidebar__participant-status" aria-label="active"></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="sidebar__spacer" aria-hidden="true"></div>
+
+    <a class="nav__item nav__item--bottom" href="#" [attr.aria-label]="notificationItem.label">
+      <img class="nav__icon" [src]="notificationItem.icon" [alt]="notificationItem.label + ' icon'" />
+      <span class="nav__label">{{ notificationItem.label }}</span>
+    </a>
+  </aside>
+
+  <main class="content" aria-label="Main content">
+    <ng-container *ngIf="!isMaTuckInsRoute">
+  <h1 class="page-title">{{ title }}</h1>
+      <!-- <p>Welcome! This is the main content area.</p> -->
+
+      <!-- Multi-Agent Chat Component -->
+  <app-chat style="width: 100%; margin: 0 auto;"></app-chat>
+
+  <!-- AI Assistants list -->
+  <section class="ai-assistants" aria-label="AI Assistants">
+      <h2 class="ai-assistants__heading">AI Assistants</h2>
+      <p class="ai-assistants__subtitle">Choose from a specialized AI assistant to help with your specific needs</p>
+
+      <div class="ai-assistants__grid">
+        <app-csr-assist-card *ngFor="let a of assistants" (click)="onAssistantClick(a)"
+          [status]="a.status"
+          [icon]="a.icon"
+          [title]="a.title"
+          [color]="a.color"
+          [subtitle]="a.subtitle">
+        </app-csr-assist-card>
+      </div>
+    </section>
+    </ng-container>
+
+    <!-- Routed views render here -->
+    <router-outlet></router-outlet>
+  </main>
+</div>

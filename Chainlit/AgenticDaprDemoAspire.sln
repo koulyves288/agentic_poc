@@ -1,0 +1,101 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgenticDaprDemoAspire.AppHost", "AgenticDaprDemoAspire.AppHost\AgenticDaprDemoAspire.AppHost.csproj", "{7ABED436-F3B4-4FEB-A32D-2AB18DABC608}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgenticDaprDemoAspire.ServiceDefaults", "AgenticDaprDemoAspire.ServiceDefaults\AgenticDaprDemoAspire.ServiceDefaults.csproj", "{CCBAB3D7-3F86-4A20-9978-0E7091B7D038}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgenticDaprDemoAspire.ApiService", "AgenticDaprDemoAspire.ApiService\AgenticDaprDemoAspire.ApiService.csproj", "{BC21929A-9293-4FA3-BAA0-78E39B8013B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgenticDaprDemoAspire.Tests", "AgenticDaprDemoAspire.Tests\AgenticDaprDemoAspire.Tests.csproj", "{0DF7DD0D-EEBE-4C7D-BCFE-D7BC8070081D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Benefits", "Benefits", "{AA610049-42F6-4759-A027-B2A7AAF4236F}"
+	ProjectSection(SolutionItems) = preProject
+		Benefits\.env = Benefits\.env
+		Benefits\app.py = Benefits\app.py
+		Benefits\models.py = Benefits\models.py
+		Benefits\pyproject.toml = Benefits\pyproject.toml
+		Benefits\run-fastapi.bat = Benefits\run-fastapi.bat
+		Benefits\server.py = Benefits\server.py
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contributions", "Contributions", "{F2D84CC9-23F8-4002-8003-181247C2E805}"
+	ProjectSection(SolutionItems) = preProject
+		Contributions\.env = Contributions\.env
+		Contributions\app.py = Contributions\app.py
+		Contributions\models.py = Contributions\models.py
+		Contributions\pyproject.toml = Contributions\pyproject.toml
+		Contributions\run-fastapi.bat = Contributions\run-fastapi.bat
+		Contributions\server.py = Contributions\server.py
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Investments", "Investments", "{5F2FD5F4-CFE6-4947-80BA-67A323C6DA25}"
+	ProjectSection(SolutionItems) = preProject
+		Investments\.env = Investments\.env
+		Investments\app.py = Investments\app.py
+		Investments\LICENSE = Investments\LICENSE
+		Investments\models.py = Investments\models.py
+		Investments\poetry.lock = Investments\poetry.lock
+		Investments\pyproject.toml = Investments\pyproject.toml
+		Investments\README.md = Investments\README.md
+		Investments\requirements.txt = Investments\requirements.txt
+		Investments\run-fastapi.bat = Investments\run-fastapi.bat
+		Investments\server.py = Investments\server.py
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MCPServer", "MCPServer", "{19ED5458-BA7D-490D-94B6-0C934F1770D5}"
+	ProjectSection(SolutionItems) = preProject
+		MCPServer\.env = MCPServer\.env
+		MCPServer\app.py = MCPServer\app.py
+		MCPServer\models.py = MCPServer\models.py
+		MCPServer\pyproject.toml = MCPServer\pyproject.toml
+		MCPServer\run-fastapi.bat = MCPServer\run-fastapi.bat
+		MCPServer\server.py = MCPServer\server.py
+		Investments\server.py = Investments\server.py
+		MCPServer\tools.py = MCPServer\tools.py
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkflowLLM", "WorkflowLLM", "{8965E9A4-2C41-4FEA-9B24-71DEA9F28152}"
+	ProjectSection(SolutionItems) = preProject
+		WorkflowLLM\.env = WorkflowLLM\.env
+		WorkflowLLM\app.py = WorkflowLLM\app.py
+		WorkflowLLM\models.py = WorkflowLLM\models.py
+		WorkflowLLM\pyproject.toml = WorkflowLLM\pyproject.toml
+		WorkflowLLM\run-fastapi.bat = WorkflowLLM\run-fastapi.bat
+		WorkflowLLM\server.py = WorkflowLLM\server.py
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketPlace", "MarketPlace\MarketPlace.csproj", "{78ECAFF1-3A63-4836-878F-3F113BAD1A6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7ABED436-F3B4-4FEB-A32D-2AB18DABC608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ABED436-F3B4-4FEB-A32D-2AB18DABC608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ABED436-F3B4-4FEB-A32D-2AB18DABC608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ABED436-F3B4-4FEB-A32D-2AB18DABC608}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCBAB3D7-3F86-4A20-9978-0E7091B7D038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCBAB3D7-3F86-4A20-9978-0E7091B7D038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCBAB3D7-3F86-4A20-9978-0E7091B7D038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCBAB3D7-3F86-4A20-9978-0E7091B7D038}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC21929A-9293-4FA3-BAA0-78E39B8013B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC21929A-9293-4FA3-BAA0-78E39B8013B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC21929A-9293-4FA3-BAA0-78E39B8013B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC21929A-9293-4FA3-BAA0-78E39B8013B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DF7DD0D-EEBE-4C7D-BCFE-D7BC8070081D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DF7DD0D-EEBE-4C7D-BCFE-D7BC8070081D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DF7DD0D-EEBE-4C7D-BCFE-D7BC8070081D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DF7DD0D-EEBE-4C7D-BCFE-D7BC8070081D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78ECAFF1-3A63-4836-878F-3F113BAD1A6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78ECAFF1-3A63-4836-878F-3F113BAD1A6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78ECAFF1-3A63-4836-878F-3F113BAD1A6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78ECAFF1-3A63-4836-878F-3F113BAD1A6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

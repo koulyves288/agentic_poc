@@ -1,0 +1,12 @@
+apiVersion: dapr.io/v1alpha1
+kind: Configuration
+metadata:
+  name: workflow-configuration
+spec:
+  features:
+    - name: Resiliency
+      enabled: true
+    - name: Conversation
+      enabled: true
+  metadata:
+    dapr-agents-default-llm-component: "mock-llm"

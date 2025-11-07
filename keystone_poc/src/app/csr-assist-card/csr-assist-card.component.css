@@ -1,0 +1,74 @@
+.assist-card {
+  width: 100%;
+  margin: 0; /* fill the grid column to keep inter-column gap to 12px */
+  height: 200px;
+  outline: 1px solid #D6D2D2;
+  outline-offset: -0.5px;
+  padding: 0 5px; /* 5px left and right padding for status text */
+  border-radius: 8px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.assist-card__chip {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  min-width: 36px;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #262525;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400; /* regular weight as requested */
+  line-height: normal;
+}
+
+.assist-card__inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%; /* allow divider to span full card width */
+}
+
+.assist-card__icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.assist-card__title {
+  color: #262525;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.assist-card__divider {
+  height: 3px;
+  border: none;
+  margin: 0 3px; /* 3px left and right margin */
+  align-self: stretch; /* take full available width of inner container */
+}
+
+.assist-card__subtitle {
+  color: #262525;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

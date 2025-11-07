@@ -1,0 +1,82 @@
+from dapr_agents import DurableAgent
+from dotenv import load_dotenv
+import asyncio
+import logging
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()  # Loads variables from .env
+
+api_key = os.getenv("OPENAI_API_KEY")
+deployment_name = os.getenv("OPENAI_DEPLOYMENT_NAME")
+endpoint = os.getenv("OPENAI_ENDPOINT")
+version = os.getenv("OPENAI_VERSION")
+
+async def main():
+    try:
+        wizard_service = DurableAgent(
+            role="Wizard",
+            name="Gandalf",
+            goal="Guide the Fellowship with wisdom and strategy, using magic and insight to ensure the downfall of Sauron.",
+            instructions=[
+                "Speak like Gandalf, with wisdom, patience, and a touch of mystery.",
+                "Provide strategic counsel, always considering the long-term consequences of actions.",
+                "Use magic sparingly, applying it when necessary to guide or protect.",
+                "Encourage allies to find strength within themselves rather than relying solely on your power.",
+                "Respond concisely, accurately, and relevantly, ensuring clarity and strict alignment with the task.",
+            ],
+            message_bus_name="messagepubsub",
+            state_store_name="workflowstatestore",
+            state_key="workflow_state",
+            agents_registry_store_name="agentstatestore",
+            agents_registry_key="agents_registry",
+            broadcast_topic_name="beacon_channel",
+            #openai_api_key=api_key,
+            #openai_deployment_name=deployment_name,
+            #openai_endpoint=endpoint,
+            #openai_version=version
+        )
+
+        await wizard_service.start()
+    except Exception as e:
+        print(f"Error starting service: {e}")
+
+def make_wizard_agent():
+    return DurableAgent(
+            role="Wizard",
+            name="Gandalf",
+            goal="Guide the Fellowship with wisdom and strategy, using magic and insight to ensure the downfall of Sauron.",
+            instructions=[
+                "Speak like Gandalf, with wisdom, patience, and a touch of mystery.",
+                "Provide strategic counsel, always considering the long-term consequences of actions.",
+                "Use magic sparingly, applying it when necessary to guide or protect.",
+                "Encourage allies to find strength within themselves rather than relying solely on your power.",
+                "Respond concisely, accurately, and relevantly, ensuring clarity and strict alignment with the task.",
+            ],
+            message_bus_name="messagepubsub",
+            state_store_name="workflowstatestore",
+            state_key="workflow_state",
+            agents_registry_store_name="agentstatestore",
+            agents_registry_key="agents_registry",
+            broadcast_topic_name="beacon_channel",
+            #openai_api_key=api_key,
+            #openai_deployment_name=deployment_name,
+            #openai_endpoint=endpoint,
+            #openai_version=version
+        )
+
+async def start_wizard_agent(agent):
+    await agent.start()
+
+async def stop_wizard_agent(agent):
+    await agent.stop()
+
+
+
+if __name__ == "__main__":
+    load_dotenv()
+
+    logging.basicConfig(level=logging.INFO)
+
+    asyncio.run(main())

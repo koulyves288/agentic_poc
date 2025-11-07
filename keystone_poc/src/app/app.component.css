@@ -1,0 +1,202 @@
+/* Layout container */
+.layout {
+	display: grid;
+	grid-template-columns: 15% 85%;
+	min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+	background: #FDFCFC;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 24px 16px;
+  border-right: 1px solid #666666;
+}
+
+.sidebar__logo {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 30px; /* spacing under logo */
+}
+
+.sidebar__logo img {
+	width: 214px;
+	height: 68px;
+	object-fit: contain; /* keep aspect ratio inside the box */
+	display: block;
+}
+
+.sidebar__nav {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+/* Separator line between menu and participants */
+.sidebar__separator {
+	width: 100%;
+	height: 1px;
+	background: #D9D9D9;
+	margin: 12px 0 4px 0;
+}
+
+/* Participants section in sidebar */
+.sidebar__participants-heading {
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	color: #555;
+	padding: 0 4px;
+	margin-bottom: 6px;
+}
+
+.sidebar__participants-list {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.sidebar__participant {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 8px;
+	border-radius: 6px;
+	transition: background .15s ease;
+}
+.sidebar__participant:hover {
+	background: #f5f5f5;
+}
+
+.sidebar__participant-avatar {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	object-fit: cover;
+	background: #eee;
+}
+
+.sidebar__participant-name {
+	font-size: 13px;
+	font-weight: 500;
+	color: #262525;
+}
+
+.sidebar__participant-status {
+	margin-left: auto;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #4CAF50; /* active indicator */
+}
+
+.nav__item {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	text-decoration: none;
+	color: #262525; /* menu item text color */
+	padding: 10px 12px;
+	border-radius: 8px;
+}
+
+.nav__item:hover,
+.nav__item:focus-visible {
+	background: #f0f0f0;
+	outline: none;
+}
+
+.nav__icon {
+	width: 20px;
+	height: 20px;
+}
+
+/* Menu item label typography */
+.nav__label {
+	color: #262525;
+	font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.sidebar__spacer {
+	flex: 1 1 auto;
+}
+
+.nav__item--bottom {
+	margin-top: 12px;
+    align-self: flex-start; /* left align bottom item within sidebar */
+}
+
+/* Main content */
+.content {
+	background: #ffffff;
+	padding: 24px;
+	/* Center all main page sections horizontally */
+	display: flex;
+	flex-direction: column;
+	/* Center all main page sections */
+	align-items: center;
+}
+
+/* Page title typography */
+.page-title {
+	color: #262525;
+	font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	/* Left align the title text within a content-width container */
+	text-align: left;
+	width: 100%;
+	max-width: 950px; /* match AI Assistants content width */
+}
+
+/* Chat styles moved to chat.component.css */
+
+/* AI Assistants layout */
+.ai-assistants__heading {
+	margin-top: 24px;
+	color: #262525;
+	font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+.ai-assistants {
+	/* decrease total container width so each of 2 cards shrinks by 40px (80px total) */
+	max-width: 950px; /* 450px + 450px + 50px gap = 950px */
+}
+.ai-assistants__subtitle {
+	margin: 6px 0 12px 0;
+	color: #262525;
+	font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+.ai-assistants__grid {
+	display: grid;
+	/* Make each card about 40px narrower than current (~490px -> ~450px) */
+	grid-template-columns: repeat(2, minmax(450px, 1fr));
+	column-gap: 50px; /* space between column 1 and 2 */
+	row-gap: 12px; /* keep previous vertical spacing */
+}
+
+/* Responsive: fall back to one column on narrower viewports to avoid overflow */
+@media (max-width: 960px) {
+	.ai-assistants__grid {
+		grid-template-columns: 1fr;
+	}
+}
+

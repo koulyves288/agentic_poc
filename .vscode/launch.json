@@ -1,0 +1,74 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug WorkflowLLM",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/WorkflowLLM/app.py",
+            "args": ["--port", "8005"],
+            "cwd": "${workspaceFolder}/WorkflowLLM",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/WorkflowLLM"
+            },
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Debug WorkflowLLM Server",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": ["server:app", "--host", "0.0.0.0", "--port", "8003"],
+            "cwd": "${workspaceFolder}/WorkflowLLM",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/WorkflowLLM"
+            },
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Debug Keystone POC (Full Stack)",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/keystone_poc/node_modules/.bin/concurrently",
+            "args": [
+                "-n", "gateway,client",
+                "-c", "yellow,cyan",
+                "npm --prefix server start",
+                "ng serve --disable-host-check"
+            ],
+            "cwd": "${workspaceFolder}/keystone_poc",
+            "console": "integratedTerminal",
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "skipFiles": ["<node_internals>/**"]
+        },
+        {
+            "name": "Debug Keystone POC (Client Only)",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/keystone_poc/node_modules/.bin/ng",
+            "args": ["serve", "--disable-host-check"],
+            "cwd": "${workspaceFolder}/keystone_poc",
+            "console": "integratedTerminal",
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "skipFiles": ["<node_internals>/**"]
+        },
+        {
+            "name": "Debug Keystone POC Server Only",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/keystone_poc/server/server.js",
+            "cwd": "${workspaceFolder}/keystone_poc/server",
+            "console": "integratedTerminal",
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "skipFiles": ["<node_internals>/**"]
+        }
+    ]
+}

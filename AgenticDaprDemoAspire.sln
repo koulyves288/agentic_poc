@@ -1,0 +1,111 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgenticDaprDemoAspire.AppHost", "AgenticDaprDemoAspire.AppHost\AgenticDaprDemoAspire.AppHost.csproj", "{7ABED436-F3B4-4FEB-A32D-2AB18DABC608}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgenticDaprDemoAspire.ServiceDefaults", "AgenticDaprDemoAspire.ServiceDefaults\AgenticDaprDemoAspire.ServiceDefaults.csproj", "{CCBAB3D7-3F86-4A20-9978-0E7091B7D038}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elf", "Elf", "{AA610049-42F6-4759-A027-B2A7AAF4236F}"
+	ProjectSection(SolutionItems) = preProject
+		Elf\.env = Elf\.env
+		Elf\app.py = Elf\app.py
+		Elf\models.py = Elf\models.py
+		Elf\pyproject.toml = Elf\pyproject.toml
+		Elf\run-fastapi.bat = Elf\run-fastapi.bat
+		Elf\server.py = Elf\server.py
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wizard", "Wizard", "{F2D84CC9-23F8-4002-8003-181247C2E805}"
+	ProjectSection(SolutionItems) = preProject
+		Wizard\.env = Wizard\.env
+		Wizard\app.py = Wizard\app.py
+		Wizard\models.py = Wizard\models.py
+		Wizard\pyproject.toml = Wizard\pyproject.toml
+		Wizard\run-fastapi.bat = Wizard\run-fastapi.bat
+		Wizard\server.py = Wizard\server.py
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hobbit", "Hobbit", "{5F2FD5F4-CFE6-4947-80BA-67A323C6DA25}"
+	ProjectSection(SolutionItems) = preProject
+		Hobbit\.env = Hobbit\.env
+		Hobbit\app.py = Hobbit\app.py
+		Hobbit\LICENSE = Hobbit\LICENSE
+		Hobbit\models.py = Hobbit\models.py
+		Hobbit\poetry.lock = Hobbit\poetry.lock
+		Hobbit\pyproject.toml = Hobbit\pyproject.toml
+		Hobbit\README.md = Hobbit\README.md
+		Hobbit\requirements.txt = Hobbit\requirements.txt
+		Hobbit\run-fastapi.bat = Hobbit\run-fastapi.bat
+		Hobbit\server.py = Hobbit\server.py
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkflowLLM", "WorkflowLLM", "{8965E9A4-2C41-4FEA-9B24-71DEA9F28152}"
+	ProjectSection(SolutionItems) = preProject
+		WorkflowLLM\.env = WorkflowLLM\.env
+		WorkflowLLM\app.py = WorkflowLLM\app.py
+		WorkflowLLM\models.py = WorkflowLLM\models.py
+		WorkflowLLM\pyproject.toml = WorkflowLLM\pyproject.toml
+		WorkflowLLM\redis_config.py = WorkflowLLM\redis_config.py
+		WorkflowLLM\redis_consumer.py = WorkflowLLM\redis_consumer.py
+		WorkflowLLM\run-fastapi.bat = WorkflowLLM\run-fastapi.bat
+		WorkflowLLM\server.py = WorkflowLLM\server.py
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chainlit", "Chainlit", "{38BC0BD9-5DE7-4F73-A7A7-8538BED7C1CF}"
+	ProjectSection(SolutionItems) = preProject
+		Chainlit\.env = Chainlit\.env
+		Chainlit\app.py = Chainlit\app.py
+		Chainlit\chainlit.md = Chainlit\chainlit.md
+		Chainlit\config.py = Chainlit\config.py
+		Chainlit\config.toml = Chainlit\config.toml
+		Chainlit\logo.png = Chainlit\logo.png
+		Chainlit\poetry.lock = Chainlit\poetry.lock
+		Chainlit\README.md = Chainlit\README.md
+		Chainlit\redis_consumer.py = Chainlit\redis_consumer.py
+		Chainlit\requirements.txt = Chainlit\requirements.txt
+		Chainlit\run-chainlit.bat = Chainlit\run-chainlit.bat
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "public", "public", "{4EBC5B91-F4A7-4240-8B97-DF0F3FE1B0FF}"
+	ProjectSection(SolutionItems) = preProject
+		Chainlit\public\logo_dark.png = Chainlit\public\logo_dark.png
+		Chainlit\public\logo_light.png = Chainlit\public\logo_light.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MCPServer", "MCPServer", "{54E40E59-63B1-414F-AE30-94E2F40626E2}"
+	ProjectSection(SolutionItems) = preProject
+		MCPServer\.env = MCPServer\.env
+		MCPServer\app.py = MCPServer\app.py
+		MCPServer\pyproject.toml = MCPServer\pyproject.toml
+		MCPServer\requirements.txt = MCPServer\requirements.txt
+		MCPServer\run-fastapi.bat = MCPServer\run-fastapi.bat
+		MCPServer\server.py = MCPServer\server.py
+		MCPServer\tools.py = MCPServer\tools.py
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7ABED436-F3B4-4FEB-A32D-2AB18DABC608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ABED436-F3B4-4FEB-A32D-2AB18DABC608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ABED436-F3B4-4FEB-A32D-2AB18DABC608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ABED436-F3B4-4FEB-A32D-2AB18DABC608}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCBAB3D7-3F86-4A20-9978-0E7091B7D038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCBAB3D7-3F86-4A20-9978-0E7091B7D038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCBAB3D7-3F86-4A20-9978-0E7091B7D038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCBAB3D7-3F86-4A20-9978-0E7091B7D038}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4EBC5B91-F4A7-4240-8B97-DF0F3FE1B0FF} = {38BC0BD9-5DE7-4F73-A7A7-8538BED7C1CF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1FA67CBA-D698-4FE5-9A4D-8AF977E0D5A0}
+	EndGlobalSection
+EndGlobal

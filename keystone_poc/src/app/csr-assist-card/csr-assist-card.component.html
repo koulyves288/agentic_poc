@@ -1,0 +1,13 @@
+<div class="assist-card" role="article" [attr.aria-label]="title">
+  <div class="assist-card__chip" [style.background]="chipBackground" [attr.data-status]="status">{{ status | titlecase }}</div>
+
+  <div class="assist-card__inner">
+    <img class="assist-card__icon" [src]="icon" [alt]="title + ' icon'" />
+
+    <div class="assist-card__title">{{ title }}</div>
+
+    <hr class="assist-card__divider" [style.background]="color" />
+
+    <div class="assist-card__subtitle">{{ subtitle }}</div>
+  </div>
+</div>

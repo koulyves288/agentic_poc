@@ -1,0 +1,79 @@
+/* Wrapper matches provided spec */
+.id-ams-epic-parent {
+  width: 302px; /* fixed card width to prevent stretching and create visible gaps */
+  height: 136px;
+  position: relative;
+  text-align: left;
+  font-size: 14px;
+  color: #262525;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.id-ams-epic {
+  /* Typography and sizing per spec (wider to prevent wrapping) */
+  width: 220px;
+  height: 17px;
+  position: absolute;
+  top: 92px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  color: #262525;
+  text-align: center;
+  display: inline-block;
+  white-space: nowrap;          /* prevent wrapping */
+  overflow: hidden;             /* clip overflow */
+  text-overflow: ellipsis;      /* show ellipsis if too long */
+}
+
+.applied-epic {
+  position: absolute;
+  top: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  display: inline-block;
+  width: 180px; /* widened to reduce wrapping */
+  text-align: center;
+  white-space: nowrap;      /* prevent wrapping */
+  overflow: hidden;         /* clip overflow */
+  text-overflow: ellipsis;  /* ellipsis for very long names */
+}
+
+.group-child {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  backdrop-filter: blur(4px);
+  border-radius: 8px;
+  border: 1px solid #d6d2d2; /* default border color */
+  box-sizing: border-box;
+  width: 302px;
+  height: 138px;
+  background: #fff;
+  z-index: 0;
+}
+
+.id-ams-epic-parent.selected .group-child {
+  border-color: var(--accent, #0069aa); /* selected border color = input color */
+}
+
+.group-item {
+  position: absolute;
+  top: 79.5px;
+  left: 17.36px;
+  border-top: 3px solid var(--accent, #0550ff); /* line uses input color */
+  box-sizing: border-box;
+  width: 272.1px;
+  height: 3px;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+/* Ensure text is above the background/frame */
+.id-ams-epic, .applied-epic { z-index: 2; }
